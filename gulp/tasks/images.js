@@ -6,8 +6,16 @@ var livereload = require('gulp-livereload');
 gulp.task('images', function() {
 	var dest = './build/images';
 
-	return gulp.src('./src/images/**')
-		.pipe(changed(dest)) // Ignore unchanged files
-		.pipe(imagemin()) // Optimize
+	return gulp.src('./src/images/**/*{.ico,.svg,.gif,_NS.png}')
+		.pipe(changed(dest))
+		.pipe(imagemin())
 		.pipe(gulp.dest(dest));
+});
+
+gulp.task('IMAGES_DEV', function() {
+    var dest = './build/images';
+
+    return gulp.src('./src/images/**/*{.ico,.svg,.gif,_NS.png}')
+        .pipe(changed(dest))
+        .pipe(gulp.dest(dest));
 });
