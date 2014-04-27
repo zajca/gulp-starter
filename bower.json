@@ -1,0 +1,18 @@
+{
+  "name": "koukejakupuj",
+  "version": "0.0.1",
+  "devDependencies": {
+    "lesshat": "~2.0.*",
+    "bootstrap": "~3.1.*"
+  },
+  "dependencies": {
+    "angular-ui-utils": "*",
+    "angular-sanitize": "=1.2.16",
+    "angular-touch": "=1.2.16",
+    "angular-animate": "=1.2.16",
+    "json2": "*",
+    "angular-gestures": "~0.2.2",
+    "angular-strap": "~2.0.1",
+    "font-awesome": "~4.0.3"
+  }
+}

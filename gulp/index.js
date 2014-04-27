@@ -1,3 +1,4 @@
+require('coffee-script');
 var fs = require('fs');
 var onlyScripts = require('./util/scriptFilter');
 var tasks = fs.readdirSync('./gulp/tasks/').filter(onlyScripts);

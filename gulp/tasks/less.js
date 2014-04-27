@@ -10,7 +10,7 @@ var minifycss    = require("gulp-minify-css");
 var rename       = require("gulp-rename");
 var debug        = require('gulp-debug');
 
-var autoPrefix = [
+var confAutoPrefix = [
     "last 2 version",
     "safari 5", "ie 9",
     "opera 12.1",
@@ -21,7 +21,7 @@ var autoPrefix = [
 gulp.task('LESS', ["SPRITES"], function() {
     return gulp.src("./src/less/main.less")
         .pipe(less())
-        .pipe(autoprefixer(autoPrefix))
+        .pipe(autoprefixer(confAutoPrefix))
         .pipe(minifycss())
         .pipe(rename({suffix: ".min"}))
         .pipe(rev())
@@ -30,10 +30,10 @@ gulp.task('LESS', ["SPRITES"], function() {
 
 gulp.task('LESS_DEV', ["SPRITES_DEV"], function() {
     return gulp.src("./src/less/main.less")
-        .pipe(debug({verbose: true}))
+//        .pipe(debug({verbose: true}))
         .pipe(plumber())
         .pipe(less())
-        .pipe(autoprefixer(autoPrefix))
+        .pipe(autoprefixer(confAutoPrefix))
         .pipe(gulp.dest("./build"))
         .pipe(livereload())
 });
