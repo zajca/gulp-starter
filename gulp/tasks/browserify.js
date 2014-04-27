@@ -9,7 +9,7 @@ gulp.task('browserify', function(){
 			entries: ['./src/ng-app/app.coffee'],
 			extensions: ['.coffee']
 		})
-		.require('backbone/node_modules/underscore', { expose: 'underscore' })
+//		.require('backbone/node_modules/underscore', { expose: 'underscore' })
 		.bundle({debug: true})
 		.on('error', handleErrors)
 		.pipe(source('app.js'))

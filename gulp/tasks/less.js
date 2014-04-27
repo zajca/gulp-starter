@@ -5,7 +5,7 @@ var handleErrors = require('../util/handleErrors');
 var plumber      = require('gulp-plumber');
 var less         = require('gulp-less');
 var autoprefixer = require('gulp-autoprefixer');
-var rev          = require('gulp-rev');
+//var rev          = require('gulp-rev');
 var minifycss    = require("gulp-minify-css");
 var rename       = require("gulp-rename");
 var debug        = require('gulp-debug');
@@ -24,7 +24,7 @@ gulp.task('LESS', ["SPRITES"], function() {
         .pipe(autoprefixer(confAutoPrefix))
         .pipe(minifycss())
         .pipe(rename({suffix: ".min"}))
-        .pipe(rev())
+//        .pipe(rev())
         .pipe(gulp.dest("./build"))
 });
 

@@ -1,4 +1,3 @@
 var gulp = require('gulp');
-var runSequence = require('run-sequence');
 
-gulp.task('prod', runSequence('clean',['HTML2JS', 'LESS' ,'images'],'browserify'));
+gulp.task('prod',['HTML2JS', 'LESS' ,'images','browserify']);
